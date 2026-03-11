@@ -2,13 +2,21 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    public GameObject otherPortal;
+    public GameObject portalMenu;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
-            other.transform.position = otherPortal.transform.position;
+            portalMenu.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            portalMenu.SetActive(false);
         }
     }
 }
