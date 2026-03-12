@@ -1,6 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,16 +8,13 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
 
     private Rigidbody playerRB;
+
+    public TMP_Text scoreText;
+    private int score;
     
     private void Awake()
     {
         playerRB = GetComponent<Rigidbody>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void FixedUpdate()
@@ -34,5 +31,15 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Coin"))
+        {
+            score += 1000;
+            scoreText.text = $"Score: {score:N0}";
+            Destroy(other.gameObject);
+        }
     }
 }
