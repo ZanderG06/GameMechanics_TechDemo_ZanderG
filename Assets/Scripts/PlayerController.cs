@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     public TMP_Text scoreText;
     private int score;
+
+    private Transform checkpoint;
     
     private void Awake()
     {
@@ -40,6 +42,14 @@ public class PlayerController : MonoBehaviour
             score += 1000;
             scoreText.text = $"Score: {score:N0}";
             Destroy(other.gameObject);
+        }
+        if(other.CompareTag("Checkpoint"))
+        {
+            checkpoint = other.transform;
+        }
+        if(other.CompareTag("KillBox"))
+        {
+            playerRB.position = checkpoint.position;
         }
     }
 }
