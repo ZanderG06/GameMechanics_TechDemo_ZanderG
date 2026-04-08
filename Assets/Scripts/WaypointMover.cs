@@ -30,15 +30,18 @@ public class WaypointMover : MonoBehaviour
 
     IEnumerator MoveBetweenWaypoints()
     {
-        for(int i = 0; i < waypoints.Count; i++)
+        while (true)
         {
-            while(Vector3.Distance(rb.position, waypoints[i]) > .001f)
+            for (int i = 0; i < waypoints.Count; i++)
             {
-                rb.MovePosition(Vector3.MoveTowards(rb.position, waypoints[i], speed * Time.deltaTime));
+                while (Vector3.Distance(rb.position, waypoints[i]) > .001f)
+                {
+                    rb.MovePosition(Vector3.MoveTowards(rb.position, waypoints[i], speed * Time.deltaTime));
 
-                yield return null;
+                    yield return null;
+                }
+                yield return new WaitForSecondsRealtime(1f);
             }
-            yield return new WaitForSecondsRealtime(1f);
         }
     }
 }

@@ -6,11 +6,11 @@ public class DoorTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        doorController.isOpen = true;
+        if(other.CompareTag("Player")) doorController.isOpen = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        doorController.isOpen = false;
+        if (other.CompareTag("Player")) doorController.isOpen = false;
     }
 }
