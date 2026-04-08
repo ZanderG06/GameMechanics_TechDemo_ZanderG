@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     private Vector2 moveInput;
+
+    public float speedBoostDuration;
 
     private Rigidbody playerRB;
 
@@ -51,5 +54,17 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.position = checkpoint.position;
         }
+        if(other.CompareTag("SpeedBoost"))
+        {
+            Destroy(other.gameObject);
+            StartCoroutine(TemporarySpeedBoost(speedBoostDuration));
+        }
+    }
+
+    private IEnumerator TemporarySpeedBoost(float duration)
+    {
+        moveSpeed *= 2;
+        yield return new WaitForSeconds(duration);
+        moveSpeed /= 2;
     }
 }
