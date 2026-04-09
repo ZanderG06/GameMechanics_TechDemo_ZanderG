@@ -975,6 +975,8 @@ Transform:
   - {fileID: 1553751675}
   - {fileID: 8493464868834285354}
   - {fileID: 685516364}
+  - {fileID: 2061972799}
+  - {fileID: 1551082627}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &164132371 stripped
@@ -3700,7 +3702,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 129944810}
     m_Modifications:
     - target: {fileID: 3485476104781761032, guid: f9c3ea5f7c73ba84c936f12dc7ea68b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4717,6 +4719,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536950311}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1551082627 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3485476104781761032, guid: f9c3ea5f7c73ba84c936f12dc7ea68b8, type: 3}
+  m_PrefabInstance: {fileID: 969231084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1553549795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5340,7 +5347,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 129944810}
     m_Modifications:
     - target: {fileID: 3485476104781761032, guid: f9c3ea5f7c73ba84c936f12dc7ea68b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6255,6 +6262,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6edf6394bc78d347907a63422f1e201, type: 3}
+--- !u!4 &2061972799 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3485476104781761032, guid: f9c3ea5f7c73ba84c936f12dc7ea68b8, type: 3}
+  m_PrefabInstance: {fileID: 1745236924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2077710744
 GameObject:
   m_ObjectHideFlags: 0
@@ -7392,5 +7404,3 @@ SceneRoots:
   - {fileID: 1071861149}
   - {fileID: 819756964}
   - {fileID: 674299029}
-  - {fileID: 1745236924}
-  - {fileID: 969231084}
